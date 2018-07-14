@@ -21,6 +21,11 @@
 * For Pok3r:
 	* Too bad it is definitely not supported currently. Maybe you should keep your attention on the [QMK custom firmware.](https://github.com/pok3r-custom/)
 * __Only Vortex Core__ has been tested. Take cautions while applying to other keyboards. Feel free to leave any feedbacks on other keyboards.
+
+### How to.
+* You can use the [github pages version](https://tsfreddie.github.io/vortex_mpc_mod/)
+* You can also download the source code, and open index.html yourself (Cookies do not work for local files)
+
 ### Difference from the official one
 * Func.key changes now will be applied to all profiles.
 * You may or may not can make changes to the default layer now.
