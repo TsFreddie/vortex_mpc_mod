@@ -29,6 +29,7 @@
 ### Difference from the official one
 * Func.key changes now will be applied to all profiles.
 * You can make changes to the default profile now.
+* You can export/import profiles now.
 
 ### Are you...
 * No, I will not provide any support regarding this modded tool.
