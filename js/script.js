@@ -963,6 +963,61 @@ var App = (function () {
         });
         return functionSet.key + ' ← ' + keyNames.join(', ');
     };
+
+    // Mod: Added Import/Export function
+    App.prototype.exportToFile = function () {
+        var _this = this;
+        var toFile = function () {
+            var exportData = {
+                setting: _this.vuePageData.setting,
+                data: _this.vuePageData.data,
+            };
+            return JSON.stringify(exportData);
+        }
+        var blob = new Blob([toFile()], { type: "text/plain;charset=utf-8" });
+        saveAs(blob, 'export.txt');
+    } 
+
+    App.prototype.importFromString = function (importedStr) {
+        var importedJsonObj = JSON.parse(importedStr);
+
+        if (!importedJsonObj["setting"] || !importedJsonObj["data"]) {
+            throw "invalid";
+        }
+
+        this.vueChangeByMe = true;
+        $.extend(this.vuePageData.setting, importedJsonObj["setting"]);
+        KeyFnKtm = getKeyFnKtm(this.vuePageData.setting.keyboard, this.vuePageData.setting.language);
+
+        $.extend(this.vuePageData.data, importedJsonObj["data"]);
+    }
+
+    App.prototype.importFromFile = function (){
+        var inputFile = $("#inputFile")[0];
+        if(inputFile && document.createEvent) {
+            var evt = document.createEvent("MouseEvents");
+            evt.initEvent("click", true, false);
+            inputFile.dispatchEvent(evt);
+         }
+    }
+
+    App.prototype.import = function (file) {
+        var reader = new FileReader();
+        var _this = this;
+        reader.onload = function(e) {
+            try {
+                _this.importFromString(reader.result);
+            } catch (err) {
+                !alert("Import Failed");
+            }   
+        }
+        try {
+            reader.readAsText(file[0]);
+        } catch (err) {
+            !alert("Can not read file.");
+        }   
+    }
+
     return App;
 }());
 function findIdxFromObjArrayByKey(array, filter) {
