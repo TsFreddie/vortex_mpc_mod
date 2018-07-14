@@ -28,7 +28,7 @@
 
 ### Difference from the official one
 * Func.key changes now will be applied to all profiles.
-* You may or may not can make changes to the default layer now.
+* You can make changes to the default profile now.
 
 ### Are you...
 * No, I will not provide any support regarding this modded tool.
