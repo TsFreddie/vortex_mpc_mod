@@ -5,6 +5,8 @@
 * A web tool.
 * Some dumb javascripts.
 
+This mod is not actively being updated. You should checkout [much-programming-core](http://github.com/TsFreddie/much-programming-core) instead, which has more features and is easier to use.
+
 ### Why?
 * Apparently the official tool let you overwrite the Fn/Fn1/Pn key position and only apply them on the currently selected profile, yet the UI treat this feature as applying globally.
 * And I don't like it, so I fixed it.
